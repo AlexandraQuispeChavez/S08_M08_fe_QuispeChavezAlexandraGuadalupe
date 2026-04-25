@@ -1,0 +1,72 @@
+<div class="crud-wrapper">
+
+  <nav class="crud-nav">
+    <div class="nav-logo">🎵 KWave Stream</div>
+    <button class="btn-volver" routerLink="/">← Volver a Landing</button>
+  </nav>
+
+  <div class="crud-container">
+
+    <div class="crud-header">
+      <div>
+        <h1>Músicos & Bandas</h1>
+        <p>Gestiona el catálogo de artistas K-pop</p>
+      </div>
+      <button class="btn-agregar" (click)="mostrarFormulario = true">+ Agregar banda</button>
+    </div>
+
+    <div class="form-card" *ngIf="mostrarFormulario">
+      <h2>{{ modoEdicion ? '✏️ Editar banda' : '➕ Nueva banda' }}</h2>
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Nombre</label>
+          <input type="text" placeholder="Ej: BTS" [(ngModel)]="nuevaBanda.nombre">
+        </div>
+        <div class="form-group">
+          <label>Género musical</label>
+          <input type="text" placeholder="Ej: K-pop" [(ngModel)]="nuevaBanda.genero">
+        </div>
+        <div class="form-group">
+          <label>País de origen</label>
+          <input type="text" placeholder="Ej: Corea del Sur" [(ngModel)]="nuevaBanda.pais">
+        </div>
+      </div>
+      <div class="form-btns">
+        <button class="btn-save" (click)="modoEdicion ? guardarEdicion() : agregar()">
+          {{ modoEdicion ? '💾 Guardar cambios' : '✅ Agregar' }}
+        </button>
+        <button class="btn-cancel" (click)="limpiar()">Cancelar</button>
+      </div>
+    </div>
+
+    <div class="table-card">
+      <div class="table-header">
+        <span>Total de bandas: <strong>{{ bandas.length }}</strong></span>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Género</th>
+            <th>País</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let banda of bandas">
+            <td>{{ banda.id }}</td>
+            <td><strong>{{ banda.nombre }}</strong></td>
+            <td><span class="badge">{{ banda.genero }}</span></td>
+            <td>{{ banda.pais }}</td>
+            <td class="acciones">
+              <button class="btn-edit" (click)="editar(banda)">✏️ Editar</button>
+              <button class="btn-delete" (click)="eliminar(banda.id)">🗑️ Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>

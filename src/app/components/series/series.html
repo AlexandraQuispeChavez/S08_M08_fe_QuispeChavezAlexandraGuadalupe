@@ -1,0 +1,12 @@
+<section id="series">
+  <h2>Contenido exclusivo</h2>
+  <p class="subtitle">Documentales, conciertos y series de tus artistas favoritos</p>
+  <div class="series-container">
+    <div class="serie-card" *ngFor="let item of series">
+      <div class="emoji">{{ item.emoji }}</div>
+      <h3>{{ item.titulo }}</h3>
+      <p>{{ item.descripcion }}</p>
+      <button (click)="verSerie(item.titulo)">▶ Ver ahora</button>
+    </div>
+  </div>
+</section>

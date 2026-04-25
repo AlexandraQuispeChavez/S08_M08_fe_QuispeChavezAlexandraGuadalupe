@@ -1,0 +1,10 @@
+<section id="contact">
+  <h2>📩 Contáctanos</h2>
+  <p class="subtitle">¿Tienes dudas o sugerencias? ¡Escríbenos!</p>
+  <div class="form-wrapper">
+    <input type="text" placeholder="Tu nombre" [(ngModel)]="nombre">
+    <input type="email" placeholder="Tu correo electrónico" [(ngModel)]="email">
+    <textarea placeholder="Tu mensaje..." [(ngModel)]="mensaje"></textarea>
+    <button (click)="enviar()">💌 Enviar mensaje</button>
+  </div>
+</section>

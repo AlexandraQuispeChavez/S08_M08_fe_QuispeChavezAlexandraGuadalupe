@@ -1,0 +1,16 @@
+/* Landing Page Styles */
+:host {
+  display: block;
+  width: 100%;
+}
+
+/* Ensure all child components stack properly */
+app-header,
+app-hero,
+app-series,
+app-benefits,
+app-contact,
+app-footer {
+  display: block;
+  width: 100%;
+}

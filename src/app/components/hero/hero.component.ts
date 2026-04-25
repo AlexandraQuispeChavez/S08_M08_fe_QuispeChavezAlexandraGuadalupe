@@ -1,0 +1,18 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Router, RouterModule } from '@angular/router';
+
+@Component({
+  selector: 'app-hero',
+  standalone: true,
+  imports: [CommonModule, RouterModule],
+  templateUrl: './hero.html',
+  styleUrls: ['./hero.css']
+})
+export class HeroComponent {
+  constructor(private router: Router) {}
+
+  verSeries() {
+    this.router.navigate(['/crud']);
+  }
+}

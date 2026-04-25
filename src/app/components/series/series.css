@@ -1,0 +1,50 @@
+#series {
+  background-color: #f9f6f0;
+}
+
+.subtitle {
+  margin-bottom: 40px;
+  color: #8a7a5a;
+}
+
+.series-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.serie-card {
+  background: #ffffff;
+  border: 1px solid #e8d9b0;
+  border-radius: 16px;
+  padding: 30px 24px;
+  width: 280px;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.serie-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(201, 168, 76, 0.25);
+  border-color: #c9a84c;
+}
+
+.emoji {
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+
+.serie-card h3 {
+  font-size: 17px;
+  margin-bottom: 10px;
+  color: #1a1a2e;
+}
+
+.serie-card p {
+  font-size: 14px;
+  color: #888877;
+  margin-bottom: 20px;
+}
